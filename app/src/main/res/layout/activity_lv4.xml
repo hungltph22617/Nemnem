@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".lv4">
+    <TextView
+        android:fontFamily="@font/hanalei"
+        android:background="#32CD32"
+        android:textColor="@color/white"
+        android:text="Giấy chứng nhận"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/attp"
+                android:layout_width="170dp"
+                android:layout_height="240dp"/>
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="Đã được ban kiểm định An Toàn Thực Phẩm của tỉnh Thanh Hóa công nhận là cơ sở sản xuất nem chua cổ truyền sạch"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <TextView
+            android:text="Đã có giấy chứng nhận của ủy ban kiểm định An Toàn Thực Phẩm của tỉnh Thanh Hóa chứng thực là cơ sở sản xuất nem chua sạch. Với hơn 100 lao động sản xuất công nhân đều phải mặc áo bảo hộ, đeo găng tay. Chúng tôi không nhập nguyên liệu không rõ nguồn gốc, sử dụng các loại hóa chất bẩn trong quá trình làm nem. Bởi làm thế một lần, chúng tôi có thể sẽ mất đi hàng trăm, hàng nghìn khách hàng quen"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

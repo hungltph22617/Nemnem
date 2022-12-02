@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tamnhinsumenh"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hanalei"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="#32CD32"
+        android:text="Tầm nhìn và sứ mệnh"
+        android:textSize="30sp" />
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="Nem Nem: "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bacground"
+                    android:layout_width="80dp"
+                    android:layout_height="110dp"/>
+            </LinearLayout>
+            <TextView
+                android:text="là thương hiệu được người tiêu dùng yêu thích và đánh giá cao về chất lượng sản phẩm, các dịch vụ mà chúng tôi cung cấp. Thực Phẩm  – Chuỗi cửa hàng thực phẩm sạch trên toàn quốc với hơn 300 đại lý, cửa hàng và hơn 1.000 cộng tác viên phủ rộng khắp cả nước nhằm mang lại những sản phẩm an toàn, đảm bảo sức khỏe tới bữa cơm gia đình Việt."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="* Tầm nhìn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="- Với khẩu hiệu: “Tôn vinh ẩm thực Việt và đặc biệt là ẩm thực Quê nhà”. Bằng sự năng động, sáng tạo, nhiệt huyết Cơ Sở Nem Chua Nem Nem đặt mục tiêu sẽ trở thành nhà cung cấp các sản phẩm Nem Chua - Giò - Chả,  cùng các đặc sản tiêu biểu Xứ Thanh chất lượng cao, mang lại giá trị dinh dưỡng và sức khoẻ cho cộng đồng tại thị trường Việt Nam. "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="* Với triết lý"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="1. Nguyên liệu sạch 100%"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="2. Tẩm ướp tự nhiên không dùng phụ gia."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="3. Tuân thủ quy trình sản xuất đảm bảo ATVSTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="4. Truyền thống: Hương vị gia truyền."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="5. Tôn vinh đặc sản xứ Thanh."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:text="- Nem Chua Nem Nem không chỉ là món ăn hấp dẫn, mà còn là thức quà quê ý nghĩa, mang đậm niềm tự hào về Đặc sản ẩm thực của Quê hương Xứ Thanh. Bằng sự tin yêu của Qúy khách, chúng tôi  tin rằng thương hiệu Nem chua cổ truyền có thể mang niềm tự hào về đặc sản quê hương và lan tỏa văn hóa xứ Thanh đến khắp mọi miền trong và ngoài nước."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="- Chân thành cảm ơn sự đồng hành của quý khách hàng cùng thương hiệu Nem chua Nem Nem (Nem chua Thanh Hóa)  trên con đường phát triển tôn vinh đặc sản quê hương."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="* Sứ mệnh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="- Nem chua Nem Nem ra đời với sứ mệnh Cung cấp các sản phẩm, thực phẩm sạch, không chất bảo quản như: Nem chua, nem cối,nem ống, .. các món ăn đặc sản vùng miền với mong muốn mang lại những món ăn ngon, dinh dưỡng an toàn cho tất cả người tiêu dùng."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="- Nem chua Nem Nem cam kết tạo nên những đóng góp quan trọng cho sự phát triển của Việt Nam bằng cách mang đến Sản Phẩm: “ Sạch từ nguồn - Ngon từ vị” … để đảm bảo sức khỏe và phục vụ người tiêu dùng."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

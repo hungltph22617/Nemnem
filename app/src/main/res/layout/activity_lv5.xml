@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".lv5">
+    <TextView
+        android:fontFamily="@font/hanalei"
+        android:background="#32CD32"
+        android:textColor="@color/white"
+        android:text="Chi Nhánh"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="Với 3 cơ sở đong hoạt động ở ngay tại tỉnh Thanh Hóa trong năm 2022."
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/bn5"
+                android:scaleType="fitXY"
+                android:layout_width="200dp"
+                android:layout_height="100dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="Sự ủng hộ của quý khách hàng sẽ giúp cho cơ sở nem chua Nem Nem càng ngày càng phát triển thịnh vượng để có thể mở thật nhiều chi nhánh trong nước để đem những món ngon của quê hương thanh hóa đem đến với bạn bè trong nước và có thể một ngày nào đó có thể đem sản phẩm ngon sạch này đến với bạn bè quốc tế."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:src="@drawable/cn"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="250dp"/>
+    </LinearLayout>
+
+</LinearLayout>

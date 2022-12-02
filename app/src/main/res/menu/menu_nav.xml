@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home"/>
+        <item android:id="@+id/nav_donhang"
+            android:icon="@drawable/donhang"
+            android:title="Đơn hàng"/>
+        <item android:id="@+id/nav_sanpham"
+            android:icon="@drawable/sanpham"
+            android:title="Sản phẩm"/>
+        <item android:id="@+id/nav_nguoimua"
+            android:icon="@drawable/dsnguoimua"
+            android:title="Danh sách người mua"/>
+    </group>
+    <item android:title="@string/nav_tk">
+        <menu>
+            <item android:id="@+id/nav_doanhthu"
+                android:icon="@drawable/doanhthu"
+                android:title="Doanh thu"/>
+            <item android:id="@+id/nav_top"
+                android:icon="@drawable/top"
+                android:title="Top sản phẩm bán chạy"/>
+        </menu>
+    </item>
+    <item android:title="@string/nav_tt">
+        <menu>
+            <item android:id="@+id/nav_ttch"
+                android:title="Thông tin cửa hàng"
+                android:icon="@drawable/information"/>
+        </menu>
+    </item>
+</menu>

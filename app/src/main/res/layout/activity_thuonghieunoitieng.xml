@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Thuonghieunoitieng">
+    <TextView
+        android:fontFamily="@font/hanalei"
+        android:textColor="@color/white"
+        android:background="#32CD32"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:text="Thương hiệu nổi tiếng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Hiện nay chúng tôi có 3 cơ sở :"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="- Cơ sở 1: ĐC: SN41, Hải Thượng Lãn Ông, P, Thành phố Thanh Hóa, Thanh Hoá."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="SĐT: 0363593241"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="- Cơ sở 2: ĐC: SN82, P Nghĩa Sơn 1, P Tào Xuyên, TP Thanh Hoá."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="SĐT: 0339502641"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="- Cơ sở 3: ĐC: Chợ đình, Trường Giang, Nông Cống, Thanh Hóa."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="SĐT: 0343708936"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bn4"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+        <TextView
+            android:text="✅ Chúng tôi không chỉ sản xuất và kinh doanh Nem-Giò-Bánh Gai, Mà còn là Điểm dừng chân lý tưởng để quý khách hàng nghỉ ngơi, thư giãn, ăn uống, mua các đặc sản các vùng miền."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="✅ Với chúng tôi Khách hàng không đơn giản là Đối tác mà Khách hàng là Ân nhân, là Tri ân và là Động lực để chúng tôi hoàn thiện và phát triển."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Với công thức gia truyền sẵn có, bằng lòng tận tâm phục vụ khách hàng, chúng tôi mong muốn phổ biến thương hiệu Nem chua Nem Nem rộng rãi tới quý khách hàng; để cùng chia sẻ tình yêu, vun đắp niềm tự hào về đặc sản ẩm thực của quê hương xứ Thanh."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Xin chân thành cảm ơn sự tin tưởng của Quý NHÀ XE và Quý KHÁCH HÀNG đã cùng chúng tôi cố gắng gây dựng và phát triển thương hiệu Nem chua Nem Nem."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

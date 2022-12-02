@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    android:backgroundTint="#d8bfd8"
+    android:layout_height="100dp">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="335dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amaranth"
+                android:gravity="center"
+                android:text="Lê Thế Hùng"
+                android:textSize="25sp" />
+            <TextView
+                android:id="@+id/txtdiachi"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:text="Trường Thành-Trường Giang-Nông Cống-Thanh Hóa"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/txtsdt"
+                android:textSize="17sp"
+                android:layout_marginLeft="5dp"
+                android:text="0363593241"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imge"
+                android:src="@drawable/edit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <ImageView
+                android:id="@+id/imgx"
+                android:src="@drawable/delete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

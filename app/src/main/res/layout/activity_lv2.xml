@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".lv2">
+    <TextView
+        android:fontFamily="@font/hanalei"
+        android:background="#32CD32"
+        android:textColor="@color/white"
+        android:text="Thông tin chi tiết sản phẩm"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="Nem chua Nem Nem cung cấp các sản phẩm như: Nem chua, Nem cối, giò bê, giò me, giò lụa, chả cá, xúc xích, bánh gai, ..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Nguyên liệu chính để làm đặc sản nem chua Thanh Hóa là thịt lợn mông đảm bảo độ tươi, ngon; bì lợn luộc chín, gạt sạch mỡ cùng với các loại gia vị như thính, tiêu, tỏi, ớt… trộn đều."
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/nemchua"
+                android:layout_width="200dp"
+                android:layout_height="100dp"/>
+        </LinearLayout>
+        <TextView
+            android:text="Thịt sau khi rửa sạch, được xay hoặc giã nhuyễn. Bì lợn làm sạch, luộc chín, gạt mỡ, thái mỏng thành sợi. Thính gạo hoặc thính ngô rang thơm trộn đều cùng nhiều gia vị khác. Sau khi pha chế xong nguyên liệu, chia hỗn hợp thịt thành từng phần nhỏ để gói."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Lá chuối dùng để gói nem cũng là một trong những vật liệu không kém phần quan trọng. Phải là lá chuội ngự tươi, được rửa sạch, để khô rồi xé nhỏ sao cho vừa với từng chiếc nem. Khi gói nem, người gói cho thêm một vài lát ớt, tỏi và kèm theo một ít lá đinh lăng để tạo mùi thơm đặc trưng cho nem."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Để bảo quản được dài ngày, người thợ gói nem thường bọc thêm giấy bóng bên trong nem, sau đó mới đến lớp lá chuối. Tùy thuộc vào thời tiết mà nem chín nhanh hay chậm. Nếu như mùa hè đặc sản nem chua Thanh Hóa sẽ chín sau 2 ngày, thì mùa đông lại phải cần tới 3 - 4 ngày mới có thể thưởng thức."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Đặc sản phải được xây dựng bằng uy tín, chất lượng. Vì vậy, các công đoạn chế biến phải đảm bảo tuyệt đối sạch. Tại cơ sở sản xuất của gia đình bà, công nhân đều phải mặc áo bảo hộ, đeo găng tay. Chúng tôi không nhập nguyên liệu không rõ nguồn gốc, sử dụng các loại hóa chất bẩn trong quá trình làm nem. Bởi làm thế một lần, chúng tôi có thể sẽ mất đi hàng trăm, hàng nghìn khách hàng quen."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Hiện tại chủ cơ sở đã có dự định đầu tư xây nhà xưởng khép kín, vô trùng bảo đảm tiêu chuẩn để hướng tới thị trường cao cấp hơn. Bên cạnh đó, cơ sở đã và đang truyền dạy lại nghề làm nem cho các con với mong muốn gìn giữ nghề gia truyền, gìn giữ những giá trị văn hóa đặc sắc của ẩm thực quê hương, để đặc sản nem chua Thanh Hóa được nhiều thực khách trong nước biết đến hơn."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

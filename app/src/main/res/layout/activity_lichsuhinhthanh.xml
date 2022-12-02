@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Lichsuhinhthanh">
+    <TextView
+        android:textColor="@color/white"
+        android:background="#32CD32"
+        android:gravity="center"
+        android:fontFamily="@font/hanalei"
+        android:textSize="30sp"
+        android:text="Lịch sử hình thành"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textStyle="bold"
+            android:text="LỊCH SỬ HÌNH THÀNH“ Câu chuyện được chia sẻ trong tự truyện của một phóng viên ghi lại khi trò chuyện cùng người sáng lập - Chủ cơ sở sản xuất Nem Anh Dân”"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/bacnem"
+                android:layout_width="170dp"
+                android:layout_height="130dp"/>
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Trải qua gần 30 năm xây dựng thương hiệu và phát triển, hiện nem chua Nem Nem đã mở rộng ra 3 cơ sở, tạo việc làm cho gần 100 lao động."
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <TextView
+            android:text="Theo chủ cửa hàng Nem Nem nghề làm nem của gia đình đã có từ lâu đời. Từ thuở bé, bà thường phụ giúp mẹ giã thịt làm nem rồi sau đó được mẹ truyền dạy lại nghề, từ cách chọn nguyên liệu sao cho tươi ngon đến cách gói một chiếc nem đạt chuẩn."
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Nhưng đến cuối những năm 1990, vì nhớ nghề, chủ cửa hàng đã quay trở lại làm nem, lấy thương hiệu là Nem chua Nem Nem. Theo chủ cửa hàng dù chỉ là một món ăn dân dã nhưng để đặc sản nem chua Thanh Hóa trở thành món ăn nức tiếng gần xa và không phải nơi nào cũng có được, thì công đoạn làm nem khá cầu kỳ, đòi hỏi sự cẩn thận và tỉ mỉ."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Trung bình mỗi ngày, các cơ sở xuất 5 - 6 vạn nem đi các tỉnh miền Bắc và miền Trung, với giá bán 3.000 đồng – 5.000 đồng/ cái, tùy loại. "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

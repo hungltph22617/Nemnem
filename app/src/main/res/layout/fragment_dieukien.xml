@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragmentcuagiohang.Dieukien">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="20sp"
+            android:text="1. Phải đặt cọc trước 25% tiền sản phẩm. sau khi nhận được hàng thanh toán số tiền hàng còn lại cho shipper."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:text="2. Khách hàng được phép kiểm tra hàng khi nhận hàng."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:text="3. Khi đặt hàng khách hàng vui lòng ghi đúng địa điểm nhận hàng tránh tình trạng ship không đúng nơi."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:text="4. Nếu có sự sai sót ở khâu đóng gói hàng hoặc số lượng hàng không giống lúc đặt hàng thì khách hàng chớ nóng giận và đừng vội đánh giá shop xin vui lòng vào phần Hỗ trợ khách hàng chat với shop để shop có thể biết được và giao bù cho khách hàng."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:text="5. Hủy đơn: khi hàng giao cho bên shipper vận chuyển thì đơn hàng đó sẽ không được hủy(với bất kì điều kiện nào)."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/chuckhachhang"
+            android:layout_width="340dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</FrameLayout>
