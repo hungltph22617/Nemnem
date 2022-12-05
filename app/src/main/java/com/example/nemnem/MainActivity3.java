@@ -92,11 +92,6 @@ public class MainActivity3 extends AppCompatActivity implements NavigationView.O
                 replaceFragment(new Nguoimua());
                 Banchinh = Nguoimua;
             }
-        }else if(id == R.id.nav_doanhthu){
-            if(Banchinh != Doanhthu){
-                replaceFragment(new Doanhthu());
-                Banchinh = Doanhthu;
-            }
         }else if(id == R.id.nav_top){
             if(Banchinh != Top){
                 replaceFragment(new Top());

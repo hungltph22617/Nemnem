@@ -17,12 +17,9 @@
     </group>
     <item android:title="@string/nav_tk">
         <menu>
-            <item android:id="@+id/nav_doanhthu"
-                android:icon="@drawable/doanhthu"
-                android:title="Doanh thu"/>
             <item android:id="@+id/nav_top"
                 android:icon="@drawable/top"
-                android:title="Top sản phẩm bán chạy"/>
+                android:title="Top sản phẩm mua nhiều"/>
         </menu>
     </item>
     <item android:title="@string/nav_tt">
