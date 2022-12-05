@@ -80,8 +80,8 @@ public class Caidat extends Fragment {
                         break;
                     case 1:
                         Dialog dialog = new Dialog(getContext());
-                        dialog.setContentView(R.layout.dialog_hotrokhachhang);
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.dialog_hotrokhachhang);
                         TextView textView = dialog.findViewById(R.id.callNow);
                         textView.setOnClickListener(v -> {
                             Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -94,8 +94,8 @@ public class Caidat extends Fragment {
                         break;
                     case 2:
                         dialog1 = new Dialog(getContext());
-                        dialog1.setContentView(R.layout.dialog_danhgiapp);
                         dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog1.setContentView(R.layout.dialog_danhgiapp);
                         ImageView img1 = dialog1.findViewById(R.id.star1);
                         ImageView img2 = dialog1.findViewById(R.id.star2);
                         ImageView img3 = dialog1.findViewById(R.id.star3);
