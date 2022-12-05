@@ -110,6 +110,7 @@ public class Tatca extends androidx.fragment.app.Fragment {
                 objLS.setTensp(a);
                 objLS.setDongia(b);
                 lichSuDAO.insert(objLS);
+                gioHangDAO.deleteAll();
                 list.clear();
             }
         });

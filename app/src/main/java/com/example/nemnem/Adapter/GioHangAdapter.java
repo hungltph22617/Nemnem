@@ -47,6 +47,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHold
         holder.txtsp.setText(list.get(position).getTensp());
         holder.slsp.setText(String.valueOf(list.get(position).getSoluong()));
         holder.dgsp.setText(String.valueOf(list.get(position).getDongia()));
+        String a = list.get(position).getTensp();
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +64,8 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHold
                             Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(context, "Xóa thất bại", Toast.LENGTH_SHORT).show();
-                        } dialog.dismiss();
+                        }
+                         dialog.dismiss();
                     }
                 });
                 builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {

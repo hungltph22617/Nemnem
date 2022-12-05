@@ -36,9 +36,13 @@ public class GioHangDAO {
     }
 
     public int delete(GioHang objGHang){
-        int res = db.delete(GioHang.TB_NAME, "masp = ?", new String[]{ objGHang.getMasp()+""});
+        int res = db.delete(GioHang.TB_NAME, "tensp = ?", new String[]{objGHang.getTensp()+""});
 
         return res;
+    }
+
+    public void deleteAll(){
+        db.delete(GioHang.TB_NAME, null, null);
     }
 
     public int update(GioHang objGHang){

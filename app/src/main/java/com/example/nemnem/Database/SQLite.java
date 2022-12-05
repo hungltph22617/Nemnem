@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class SQLite extends SQLiteOpenHelper {
-    public static final String NAME_DB = "DUANLTMT2";
+    public static final String NAME_DB = "DUANLTMT";
     public static final int VERSION_DB = 1;
     public SQLite(@Nullable Context context) {
         super(context, NAME_DB, null, VERSION_DB);
@@ -27,13 +27,13 @@ public class SQLite extends SQLiteOpenHelper {
                 "sdt int)";
         db.execSQL(nguoimua);
         String giohang = "CREATE TABLE Giohang(" +
-                "masp INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "tensp text," +
                 "soluong int," +
                 "dongia int)";
         db.execSQL(giohang);
         String lichsu = "CREATE TABLE Lichsu(" +
-                "masp INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "tensp text," +
                 "dongia int)";
         db.execSQL(lichsu);
