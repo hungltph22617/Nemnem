@@ -4,6 +4,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -12,18 +14,20 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.nemnem.Adapter.HomeAdapter;
+import com.example.nemnem.Adapter.SanphamAdapter;
+import com.example.nemnem.Dao.SanphamDao;
 import com.example.nemnem.FragmentcuaHome.ViewpagerAdapter;
 import com.example.nemnem.R;
 import com.example.nemnem.model.home;
+import com.example.nemnem.model.sanpham;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends Fragment {
-    ListView lv;
     ViewPager pager;
     BottomNavigationView bot;
     HomeAdapter adapterr;
-    ArrayList<home> list = new ArrayList<>();
 //    RecyclerView rehome;
 
     public Home() {

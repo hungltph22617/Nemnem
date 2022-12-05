@@ -10,9 +10,15 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.nemnem.Adapter.SanPhamNoiBatAdapter;
+import com.example.nemnem.Adapter.SanphamAdapter;
+import com.example.nemnem.Dao.SanphamDao;
 import com.example.nemnem.R;
+import com.example.nemnem.model.sanpham;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +26,11 @@ import java.util.List;
 public class Trangchu extends Fragment {
     ViewFlipper viewflipper;
     List<String> list = new ArrayList<>();
+    SanphamDao dao;
+    ArrayList<sanpham> listSanPham = new ArrayList<>();
+    SanPhamNoiBatAdapter adapterSanPham;
+    RecyclerView recyclerView;
+
 //    RecyclerView retc;
 
     public Trangchu() {
@@ -32,6 +43,10 @@ public class Trangchu extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trangchu, container, false);
         viewflipper = view.findViewById(R.id.viewflipper);
+        recyclerView = view.findViewById(R.id.retc);
+
+        setRecycler();
+
 //        retc = view.findViewById(R.id.retc);
         list.add("https://vifoodshop.com/wp-content/uploads/2019/07/nem-chua-chuan-thanh-hoa.jpg");
         list.add("https://vifoodshop.com/wp-content/uploads/2019/07/Cach_chon_Nem_Chua_Thanh_Hoa_Chinh_Goc.jpg");
@@ -51,5 +66,13 @@ public class Trangchu extends Fragment {
         viewflipper.setInAnimation(slide);
         viewflipper.setOutAnimation(slide2);
         return view;
+    }
+    private void setRecycler(){
+        dao = new SanphamDao(getActivity());
+        listSanPham = dao.selectAll();
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(manager);
+        adapterSanPham = new SanPhamNoiBatAdapter(getActivity(), listSanPham);
+        recyclerView.setAdapter(adapterSanPham);
     }
 }

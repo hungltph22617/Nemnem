@@ -12,7 +12,14 @@
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:id="@+id/pager"/>
+            android:id="@+id/pager">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_sanphamnoibat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.viewpager.widget.ViewPager>
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
             android:id="@+id/bot"
