@@ -15,8 +15,10 @@ import android.widget.Button;
 
 import com.example.nemnem.Adapter.GioHangAdapter;
 import com.example.nemnem.Dao.GioHangDAO;
+import com.example.nemnem.Dao.LichSuDAO;
 import com.example.nemnem.R;
 import com.example.nemnem.model.GioHang;
+import com.example.nemnem.model.Lichsu;
 
 import java.util.ArrayList;
 
@@ -74,23 +76,38 @@ public class Tatca extends androidx.fragment.app.Fragment {
         return inflater.inflate(R.layout.fragment_tatca, container, false);
     }
 
+    RecyclerView recyclerView;
+    GioHangDAO gioHangDAO;
+    Button btn_dh;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button btn_dh = view.findViewById(R.id.btn_dathang);
-        RecyclerView recyclerView = view.findViewById(R.id.rv_giohang);
-        GioHangDAO gioHangDAO = new GioHangDAO(getContext());
+        btn_dh = view.findViewById(R.id.btn_dathang);
+        recyclerView = view.findViewById(R.id.rv_giohang);
+        gioHangDAO = new GioHangDAO(getContext());
         gioHangDAO.open();
+//        GioHang objGH1 = new GioHang(1, "Sản phẩm 1", 3, 15000);
+//        gioHangDAO.insert(objGH1);
+//        GioHang objGH2 = new GioHang(2, "Sản phẩm 2", 4, 12000);
+//        gioHangDAO.insert(objGH2);
         ArrayList<GioHang> list = gioHangDAO.selectAll();
+        LichSuDAO lichSuDAO = new LichSuDAO(getContext());
+        lichSuDAO.open();
         GioHangAdapter gioHangAdapter = new GioHangAdapter(list, gioHangDAO);
         recyclerView.setAdapter(gioHangAdapter);
         btn_dh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String a = "";
+                int b = 0;
                 for (int i = 0; i<list.size(); i++){
                     a = a + list.get(i).getTensp() +" x "+list.get(i).getSoluong()+"\n";
+                    b = b + list.get(i).getDongia();
                 }
+                Lichsu objLS = new Lichsu();
+                objLS.setTensp(a);
+                objLS.setDongia(b);
+                lichSuDAO.insert(objLS);
                 list.clear();
             }
         });

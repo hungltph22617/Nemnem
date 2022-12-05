@@ -9,6 +9,13 @@ public class GioHang {
     public GioHang() {
     }
 
+    public GioHang(int masp, String tensp, int soluong, int dongia) {
+        this.masp = masp;
+        this.tensp = tensp;
+        this.soluong = soluong;
+        this.dongia = dongia;
+    }
+
     public static final String TB_NAME = "Giohang";
     public static final String COL_ID = "masp";
     public static final String COL_NAME = "tensp";

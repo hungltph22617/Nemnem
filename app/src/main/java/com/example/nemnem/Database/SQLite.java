@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class SQLite extends SQLiteOpenHelper {
-    public static final String NAME_DB = "DUANLTMT";
+    public static final String NAME_DB = "DUANLTMT2";
     public static final int VERSION_DB = 1;
     public SQLite(@Nullable Context context) {
         super(context, NAME_DB, null, VERSION_DB);
