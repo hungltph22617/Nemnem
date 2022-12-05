@@ -36,7 +36,7 @@ public class GioHangDAO {
     }
 
     public int delete(GioHang objGHang){
-        int res = db.delete(GioHang.TB_NAME, "id = ?", new String[]{ objGHang.getMasp()+""});
+        int res = db.delete(GioHang.TB_NAME, "masp = ?", new String[]{ objGHang.getMasp()+""});
 
         return res;
     }
@@ -70,5 +70,24 @@ public class GioHangDAO {
             }
         }
         return listLop;
+    }
+
+    public ArrayList<GioHang> selectAll2(){
+        String sql = "SELECT tensp, SUM(soluong), SUM(dongia) FROM Giohang GROUP BY tensp";
+        ArrayList<GioHang> list = new ArrayList<>();
+
+        Cursor cs = db.rawQuery(sql, new String[]{});
+        if (cs.moveToFirst()){
+            while (!(cs.isAfterLast())){
+                GioHang objGH = new GioHang();
+                objGH.setTensp(cs.getString(0));
+                objGH.setSoluong(cs.getInt(1));
+                objGH.setDongia(cs.getInt(2));
+                list.add(objGH);
+
+                cs.moveToNext();
+            }
+        }
+        return list;
     }
 }

@@ -90,7 +90,9 @@ public class Tatca extends androidx.fragment.app.Fragment {
 //        gioHangDAO.insert(objGH1);
 //        GioHang objGH2 = new GioHang(2, "Sản phẩm 2", 4, 12000);
 //        gioHangDAO.insert(objGH2);
-        ArrayList<GioHang> list = gioHangDAO.selectAll();
+//        GioHang objGH3 = new GioHang(3, "Sản phẩm 1", 5, 25000);
+//        gioHangDAO.insert(objGH3);
+        ArrayList<GioHang> list = gioHangDAO.selectAll2();
         LichSuDAO lichSuDAO = new LichSuDAO(getContext());
         lichSuDAO.open();
         GioHangAdapter gioHangAdapter = new GioHangAdapter(list, gioHangDAO);
