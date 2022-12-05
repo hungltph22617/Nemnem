@@ -8,14 +8,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_width="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tv_tensplichsu"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_tensplichsu"/>
-        <TextView
-            android:layout_width="100dp"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="20dp"/>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_giasplichsu"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng hóa đơn: "/>
+            <TextView
+                android:id="@+id/tv_giasplichsu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_blue_bright" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VND"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

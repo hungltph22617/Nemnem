@@ -14,10 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nemnem.Dao.GioHangDAO;
-import com.example.nemnem.Dao.SanphamDao;
 import com.example.nemnem.R;
 import com.example.nemnem.model.GioHang;
-import com.example.nemnem.model.sanpham;
 
 import java.util.ArrayList;
 

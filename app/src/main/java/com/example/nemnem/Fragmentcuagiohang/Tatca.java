@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.nemnem.Adapter.GioHangAdapter;
 import com.example.nemnem.Dao.GioHangDAO;
@@ -112,6 +113,7 @@ public class Tatca extends androidx.fragment.app.Fragment {
                 lichSuDAO.insert(objLS);
                 gioHangDAO.deleteAll();
                 list.clear();
+                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
             }
         });
     }

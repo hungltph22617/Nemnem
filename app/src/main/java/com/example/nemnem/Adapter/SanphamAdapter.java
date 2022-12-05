@@ -15,19 +15,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nemnem.Dao.GioHangDAO;
 import com.example.nemnem.Dao.SanphamDao;
 import com.example.nemnem.R;
-import com.example.nemnem.model.sanpham;
+import com.example.nemnem.model.GioHang;
+import com.example.nemnem.model.SanPham;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
 public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHolder>{
     public Context context;
-    public ArrayList<sanpham> list = new ArrayList<>();
+    public ArrayList<SanPham> list = new ArrayList<>();
     SanphamDao dao;
+    GioHangDAO gioHangDAO;
 
-    public SanphamAdapter(Context context, ArrayList<sanpham> list) {
+    public SanphamAdapter(Context context, ArrayList<SanPham> list) {
         this.context = context;
         this.list = list;
         dao = new SanphamDao(context);
@@ -42,7 +45,7 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        sanpham sp = list.get(position);
+        SanPham sp = list.get(position);
         holder.txtsp.setText(list.get(position).getTensp());
         holder.slsp.setText(String.valueOf(list.get(position).getSoluong()));
         holder.dgsp.setText(String.valueOf(list.get(position).getDongia()));
@@ -55,36 +58,50 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHold
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(dao.delete(sp.getMasp())){
-                    Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
-                    list.clear();
-                    list.addAll(dao.selectAll());
-                    notifyDataSetChanged();
-                }else{
-                    Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
+                gioHangDAO = new GioHangDAO(v.getContext());
+                gioHangDAO.open();
+                GioHang objGH = new GioHang();
+                objGH.setTensp(sp.getTensp());
+                objGH.setSoluong(sp.getSoluong());
+                objGH.setDongia(sp.getDongia());
+                long kq = gioHangDAO.insert(objGH);
+                if (kq>0){
+                    Toast.makeText(context, "Thêm thành công vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Có lỗi thì thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                 }
+//                if(dao.delete(sp.getMasp())){
+//                    Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
+//                    list.clear();
+//                    list.addAll(dao.selectAll());
+//                    notifyDataSetChanged();
+//                }else{
+//                    Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
     }
 
-    private void suasp(sanpham sp) {
+    private void suasp(SanPham sp) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         View view = inflater.inflate(R.layout.suasp, null);
         builder.setView(view);
         Dialog dialog = builder.create();
         builder.show();
-        TextInputEditText edutensp = view.findViewById(R.id.edutensp);
-        TextInputEditText eduslsp = view.findViewById(R.id.edusl);
+//        TextInputEditText edutensp = view.findViewById(R.id.edutensp);
+//        TextInputEditText eduslsp = view.findViewById(R.id.edusl);
         TextInputEditText edudgsp = view.findViewById(R.id.edudg);
         Button btnupdate = view.findViewById(R.id.btnupdate);
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sp.setTensp(edutensp.getText().toString());
-                sp.setSoluong(Integer.parseInt(eduslsp.getText().toString()));
-                sp.setDongia(Integer.parseInt(edudgsp.getText().toString()));
-                if(edutensp.getText().toString().equals("") | eduslsp.getText().toString().equals("") | edudgsp.getText().toString().equals("")){
+//                sp.setTensp(edutensp.getText().toString());
+//                sp.setSoluong(Integer.parseInt(eduslsp.getText().toString()));
+                sp.setDanhgia(edudgsp.getText().toString());
+                if(
+//                        edutensp.getText().toString().equals("") | eduslsp.getText().toString().equals("") |
+                                edudgsp.getText().toString().equals("")){
                     Toast.makeText(context, "Không được để trống", Toast.LENGTH_SHORT).show();
                 }else if(dao.update(sp)){
                     Toast.makeText(context, "Sửa thành công", Toast.LENGTH_SHORT).show();

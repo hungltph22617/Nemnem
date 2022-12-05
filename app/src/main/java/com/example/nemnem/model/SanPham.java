@@ -1,26 +1,39 @@
 package com.example.nemnem.model;
 
-public class sanpham {
+public class SanPham {
     private int masp;
     private String tensp;
     private int soluong;
     private int dongia;
+    private String danhgia;
 
-    public sanpham(int masp, String tensp, int soluong, int dongia) {
+    public SanPham() {
+    }
+
+
+    public SanPham(int masp, String tensp, int soluong, int dongia, String danhgia) {
         this.masp = masp;
         this.tensp = tensp;
         this.soluong = soluong;
         this.dongia = dongia;
+        this.danhgia = danhgia;
     }
 
-    public sanpham(String tensp, int soluong, int dongia) {
+    public SanPham(String tensp, int soluong, int dongia) {
         this.tensp = tensp;
         this.soluong = soluong;
         this.dongia = dongia;
     }
 
-    public sanpham() {
+
+    public String getDanhgia() {
+        return danhgia;
     }
+
+    public void setDanhgia(String danhgia) {
+        this.danhgia = danhgia;
+    }
+
 
     public int getMasp() {
         return masp;

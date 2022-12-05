@@ -15,10 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.nemnem.Adapter.SanPhamNoiBatAdapter;
-import com.example.nemnem.Adapter.SanphamAdapter;
 import com.example.nemnem.Dao.SanphamDao;
 import com.example.nemnem.R;
-import com.example.nemnem.model.sanpham;
+import com.example.nemnem.model.SanPham;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class Trangchu extends Fragment {
     ViewFlipper viewflipper;
     List<String> list = new ArrayList<>();
     SanphamDao dao;
-    ArrayList<sanpham> listSanPham = new ArrayList<>();
+    ArrayList<SanPham> listSanPham = new ArrayList<>();
     SanPhamNoiBatAdapter adapterSanPham;
     RecyclerView recyclerView;
 

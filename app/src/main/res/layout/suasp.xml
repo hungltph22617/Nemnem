@@ -12,40 +12,50 @@
         android:gravity="center"
         android:text="Sửa sản phẩm"
         android:textSize="30sp" />
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:hint="Nhập tên sản phẩm"-->
+<!--            android:id="@+id/edutensp"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:hint="Nhập số lượng sản phẩm"-->
+<!--            android:id="@+id/edusl"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:hint="Nhập đơn giá sản phẩm"-->
+<!--            android:id="@+id/edudg"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:hint="Nhập tên sản phẩm"
-            android:id="@+id/edutensp"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:hint="Nhập số lượng sản phẩm"
-            android:id="@+id/edusl"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:hint="Nhập đơn giá sản phẩm"
+            android:hint="Đánh giá sản phẩm"
             android:id="@+id/edudg"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="Update"
+        android:text="Đánh giá"
         android:id="@+id/btnupdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

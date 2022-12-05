@@ -16,13 +16,10 @@
         android:text="Đánh giá sản phẩm"
         android:textColor="@color/white"
         android:textSize="30sp" />
-    <TextView
-        android:layout_marginTop="300dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textSize="50sp"
-        android:text="Đang tiến hành xử lí"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/lv_danhgia"/>
 </LinearLayout>
