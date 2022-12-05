@@ -27,15 +27,15 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.ViewHold
     public ArrayList<GioHang> list = new ArrayList<>();
     GioHangDAO gioHangDAO;
 
-    public GioHangAdapter(Context context, ArrayList<GioHang> list, GioHangDAO gioHangDAO) {
-        this.context = context;
+    public GioHangAdapter(ArrayList<GioHang> list, GioHangDAO gioHangDAO) {
         this.list = list;
-        gioHangDAO = new GioHangDAO(context);
+        this.gioHangDAO = gioHangDAO;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        this.context = parent.getContext();
         View view = LayoutInflater.from(context).inflate(R.layout.itemgiohang, null);
         return new GioHangAdapter.ViewHolder(view);
     }

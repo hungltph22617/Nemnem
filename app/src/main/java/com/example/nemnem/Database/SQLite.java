@@ -32,6 +32,11 @@ public class SQLite extends SQLiteOpenHelper {
                 "soluong int," +
                 "dongia int)";
         db.execSQL(giohang);
+        String lichsu = "CREATE TABLE Lichsu(" +
+                "masp INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tensp text," +
+                "dongia int)";
+        db.execSQL(lichsu);
     }
 
     @Override
@@ -39,6 +44,7 @@ public class SQLite extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Sanpham");
         db.execSQL("DROP TABLE IF EXISTS Nguoimua");
         db.execSQL("DROP TABLE IF EXISTS Giohang");
+        db.execSQL("DROP TABLE IF EXISTS Lichsu");
         onCreate(db);
     }
 }

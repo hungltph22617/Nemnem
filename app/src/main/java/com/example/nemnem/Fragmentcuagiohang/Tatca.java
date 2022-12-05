@@ -5,13 +5,20 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.nemnem.Adapter.GioHangAdapter;
+import com.example.nemnem.Dao.GioHangDAO;
 import com.example.nemnem.R;
+import com.example.nemnem.model.GioHang;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,5 +77,22 @@ public class Tatca extends androidx.fragment.app.Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Button btn_dh = view.findViewById(R.id.btn_dathang);
+        RecyclerView recyclerView = view.findViewById(R.id.rv_giohang);
+        GioHangDAO gioHangDAO = new GioHangDAO(getContext());
+        gioHangDAO.open();
+        ArrayList<GioHang> list = gioHangDAO.selectAll();
+        GioHangAdapter gioHangAdapter = new GioHangAdapter(list, gioHangDAO);
+        recyclerView.setAdapter(gioHangAdapter);
+        btn_dh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String a = "";
+                for (int i = 0; i<list.size(); i++){
+                    a = a + list.get(i).getTensp() +" x "+list.get(i).getSoluong()+"\n";
+                }
+                list.clear();
+            }
+        });
     }
 }
