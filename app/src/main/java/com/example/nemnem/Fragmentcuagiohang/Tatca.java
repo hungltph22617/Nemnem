@@ -1,6 +1,8 @@
 package com.example.nemnem.Fragmentcuagiohang;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,9 +19,15 @@ import android.widget.Toast;
 import com.example.nemnem.Adapter.GioHangAdapter;
 import com.example.nemnem.Dao.GioHangDAO;
 import com.example.nemnem.Dao.LichSuDAO;
+import com.example.nemnem.Dao.SanPhamBanChayDAO;
+import com.example.nemnem.Fragment.Home;
+import com.example.nemnem.Fragment.Top;
+import com.example.nemnem.FragmentcuaHome.Caidat;
 import com.example.nemnem.R;
 import com.example.nemnem.model.GioHang;
 import com.example.nemnem.model.Lichsu;
+import com.example.nemnem.model.SanPham;
+import com.example.nemnem.model.SanPhamBanChay;
 
 import java.util.ArrayList;
 
@@ -29,45 +37,16 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class Tatca extends androidx.fragment.app.Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Tatca() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Tatca.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Tatca newInstance(String param1, String param2) {
+    SanPhamBanChayDAO sanPhamBanChayDAO;
+    ArrayList<SanPhamBanChay> sanPhamBanChayArrayList;
+    public static Tatca newInstance() {
         Tatca fragment = new Tatca();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -96,24 +75,56 @@ public class Tatca extends androidx.fragment.app.Fragment {
         ArrayList<GioHang> list = gioHangDAO.selectAll2();
         LichSuDAO lichSuDAO = new LichSuDAO(getContext());
         lichSuDAO.open();
+        sanPhamBanChayDAO = new SanPhamBanChayDAO(getActivity());
+        sanPhamBanChayDAO.open();
+        sanPhamBanChayArrayList = sanPhamBanChayDAO.selectAll();
         GioHangAdapter gioHangAdapter = new GioHangAdapter(list, gioHangDAO);
         recyclerView.setAdapter(gioHangAdapter);
         btn_dh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "";
-                int b = 0;
-                for (int i = 0; i<list.size(); i++){
-                    a = a + list.get(i).getTensp() +" x "+list.get(i).getSoluong()+"\n";
-                    b = b + list.get(i).getDongia();
+                if (Caidat.nguoimuaLogin!=null){
+                    String a = "";
+                    int b = 0;
+                    for (int i = 0; i<list.size(); i++){
+                        a = a + list.get(i).getTensp() +" x "+list.get(i).getSoluong()+"\n";
+                        b = b + list.get(i).getDongia();
+                    }
+                    for (GioHang gioHang : list){
+                        for (SanPhamBanChay sp : sanPhamBanChayArrayList){
+                            if (gioHang.getTensp().equals(sp.getTensp())){
+                                sp.setSoLuong(sp.getSoLuong()+1);
+                                sanPhamBanChayDAO.update(sp);
+                            }
+                        }
+                    }
+                    Lichsu objLS = new Lichsu();
+                    objLS.setTensp(a);
+                    objLS.setDongia(b);
+                    lichSuDAO.insert(objLS);
+                    gioHangDAO.deleteAll();
+                    list.clear();
+                    recyclerView.setAdapter(gioHangAdapter);
+                    Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+                }else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("Xin vui lòng đăng nhập trước khi đặt hàng");
+                    builder.setIcon(R.drawable.ic_baseline_insert_emoticon_24);
+                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            dialog.dismiss();
+                        }
+                    });
+//                    builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+                    builder.show();
                 }
-                Lichsu objLS = new Lichsu();
-                objLS.setTensp(a);
-                objLS.setDongia(b);
-                lichSuDAO.insert(objLS);
-                gioHangDAO.deleteAll();
-                list.clear();
-                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
             }
         });
     }

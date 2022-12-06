@@ -16,9 +16,10 @@ import com.example.nemnem.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends Fragment {
-    ViewPager pager;
-    BottomNavigationView bot;
+    public ViewPager pager;
+    public BottomNavigationView bot;
     HomeAdapter adapterr;
+    public boolean chk;
 //    RecyclerView rehome;
 
     public Home() {

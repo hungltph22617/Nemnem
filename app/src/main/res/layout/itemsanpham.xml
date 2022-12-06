@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
-    android:background="@drawable/bg_item"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="15dp">
+    android:orientation="vertical"
+    android:layout_margin="8dp">
     <LinearLayout
+        android:background="@drawable/bg_item"
         android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:layout_width="match_parent"
         android:layout_height="100dp">
         <ImageView
@@ -21,11 +23,12 @@
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="250dp"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/txtsp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:fontFamily="@font/amaranth"
                 android:gravity="center"
                 android:text="Nem chua loại 1"
@@ -33,37 +36,40 @@
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/slsp"
                     android:textSize="20sp"
                     android:text="50"
+                    android:padding="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:text="Cái"
+                    android:padding="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/dgsp"
                     android:textSize="20sp"
                     android:layout_marginLeft="20dp"
                     android:text="150.000"
+                    android:padding="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:text="VNĐ"
+                    android:padding="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
-            android:layout_marginLeft="13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -80,4 +86,7 @@
                 android:layout_height="40dp"/>
         </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 </LinearLayout>

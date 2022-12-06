@@ -6,66 +6,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.Top">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:background="#2f4f4f"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:fontFamily="@font/bevan"
-            android:gravity="center"
-            android:text="Top sản phẩm bán chạy"
-            android:textSize="30sp" />
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            android:id="@+id/topngaybd"
-            app:startIconDrawable="@drawable/calendar"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:hint="Nhập ngày bắt đầu"
-                android:id="@+id/nbd"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            android:id="@+id/topngaykt"
-            app:startIconDrawable="@drawable/calendar"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:id="@+id/nkt"
-                android:hint="Nhập ngày kết thúc"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
-            android:layout_margin="10dp"
-            android:gravity="center"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <TextView
-                android:textSize="25sp"
-                android:text="Tổng tiền: "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:id="@+id/ht"
-                android:layout_marginLeft="10dp"
-                android:text="Hiển thị"
+                android:background="#2f4f4f"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/hienthi"
-            android:background="#fff8dc"
-            android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bevan"
+                android:gravity="center"
+                android:text="Top sản phẩm bán chạy"
+                android:textSize="25sp" />
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:id="@+id/topngaybd"-->
+<!--                app:startIconDrawable="@drawable/calendar"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:hint="Nhập ngày bắt đầu: 2022-12-06"-->
+<!--                    android:id="@+id/nbd"-->
+<!--                    android:textColorHint="@color/black"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:id="@+id/topngaykt"-->
+<!--                app:startIconDrawable="@drawable/calendar"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:id="@+id/nkt"-->
+<!--                    android:hint="Nhập ngày kết thúc: 2022-12-06"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <Button-->
+<!--                    android:id="@+id/ht"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="Hiển thị"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#ccc">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_spbanchay"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

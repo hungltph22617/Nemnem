@@ -3,11 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_item"
-    android:layout_margin="10dp">
+    android:orientation="vertical"
+    android:layout_margin="8dp">
     <LinearLayout
         android:gravity="center"
         android:padding="10dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:background="@drawable/bg_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
@@ -23,7 +26,7 @@
             android:layout_gravity="right"
             android:orientation="vertical"
             android:layout_width="220dp"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/txtsp"
                 android:layout_width="match_parent"
@@ -35,34 +38,36 @@
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/slsp"
                     android:textSize="20sp"
                     android:text="50"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:text="Cái"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/dgsp"
                     android:textSize="20sp"
                     android:layout_marginLeft="20dp"
                     android:text="150.000"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:text="VNĐ"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 </LinearLayout>

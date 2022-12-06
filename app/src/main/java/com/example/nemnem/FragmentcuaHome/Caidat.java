@@ -11,6 +11,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +24,13 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.nemnem.ActivityRegister;
 import com.example.nemnem.Adapter.CaidatAdapter;
 import com.example.nemnem.LienkettaikhoanNH;
 import com.example.nemnem.MainActivity2;
 import com.example.nemnem.R;
 import com.example.nemnem.model.caidat;
+import com.example.nemnem.model.nguoimua;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -35,9 +39,10 @@ public class Caidat extends Fragment {
     ListView cdlv;
     CaidatAdapter adapter;
     ArrayList<caidat> list = new ArrayList<>();
-    Switch s;
     Button btnlogin, btnregister;
     Dialog dialog1;
+    public static nguoimua nguoimuaLogin;
+    TextView tv_user;
 
     public Caidat() {
         // Required empty public constructor
@@ -48,9 +53,9 @@ public class Caidat extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_caidat, container, false);
-        s = view.findViewById(R.id.s);
         cdlv = view.findViewById(R.id.cdlv);
         btnregister = view.findViewById(R.id.btnregister);
+        tv_user = view.findViewById(R.id.tv_user);
         adapter = new CaidatAdapter(getActivity(), list);
         list.add(new caidat("Đăng xuất"));
         list.add(new caidat("Hỗ trợ khách hàng"));
@@ -67,7 +72,8 @@ public class Caidat extends Fragment {
                         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //chuyển sang activity đăng nhập
+                                nguoimuaLogin = null;
+                                SetThongTinUser();
                             }
                         });
                         builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
@@ -122,6 +128,9 @@ public class Caidat extends Fragment {
                 startActivity(intent);
             }
         });
+        btnregister.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), ActivityRegister.class));
+        });
         return view;
     }
     private void onClickDanhGia(ImageView img1,ImageView img2,ImageView img3,ImageView img4,ImageView img5,TextView textView){
@@ -164,5 +173,30 @@ public class Caidat extends Fragment {
             Snackbar.make(getView(),"Cảm ơn đánh giá của bạn",2000).show();
             dialog1.dismiss();
         });
+    }
+    private void SetThongTinUser(){
+        if (nguoimuaLogin!=null){
+            btnlogin.setVisibility(View.GONE);
+            btnregister.setVisibility(View.GONE);
+            tv_user.setVisibility(View.VISIBLE);
+            tv_user.setText("Xin chào, "+nguoimuaLogin.getTen());
+            tv_user.setGravity(Gravity.CENTER);
+        }else {
+            btnlogin.setVisibility(View.VISIBLE);
+            btnregister.setVisibility(View.VISIBLE);
+            tv_user.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (nguoimuaLogin!=null){
+            Log.d("Check", "onStart: "+nguoimuaLogin.getTen());
+
+        }else {
+            Log.d("Check", "onStart: Khong co gi");
+        }
+        SetThongTinUser();
     }
 }

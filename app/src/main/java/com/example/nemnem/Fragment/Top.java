@@ -2,13 +2,31 @@ package com.example.nemnem.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.nemnem.Adapter.GioHangAdapter;
+import com.example.nemnem.Adapter.SanPhamBanChayAdapter;
+import com.example.nemnem.Adapter.SanPhamNoiBatAdapter;
+import com.example.nemnem.Dao.LichSuDAO;
+import com.example.nemnem.Dao.SanPhamBanChayDAO;
+import com.example.nemnem.Dao.SanphamDao;
 import com.example.nemnem.R;
+import com.example.nemnem.model.SanPhamBanChay;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,45 +34,17 @@ import com.example.nemnem.R;
  * create an instance of this fragment.
  */
 public class Top extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Top() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Top.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Top newInstance(String param1, String param2) {
+    RecyclerView recyclerView;
+    SanPhamBanChayDAO sanPhamBanChayDAO;
+    ArrayList<SanPhamBanChay> list;
+    public static Top newInstance() {
         Top fragment = new Top();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -62,5 +52,30 @@ public class Top extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_top, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recyclerView = view.findViewById(R.id.recycler_spbanchay);
+        sanPhamBanChayDAO = new SanPhamBanChayDAO(getActivity());
+        sanPhamBanChayDAO.open();
+        list = sanPhamBanChayDAO.selectAll();
+        Collections.sort(list, new Comparator<SanPhamBanChay>() {
+            @Override
+            public int compare(SanPhamBanChay sanPhamBanChay, SanPhamBanChay sp) {
+                if (sanPhamBanChay.getSoLuong() == sp.getSoLuong()) {
+                    return 0;
+                }
+                if (sanPhamBanChay.getSoLuong() < sp.getSoLuong()) {
+                    return 1;
+                }
+                return -1;
+            }
+        });
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(manager);
+        SanPhamBanChayAdapter sanPhamBanChayAdapter = new SanPhamBanChayAdapter(getContext(), list);
+        recyclerView.setAdapter(sanPhamBanChayAdapter);
     }
 }

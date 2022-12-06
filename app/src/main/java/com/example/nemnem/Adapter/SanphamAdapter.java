@@ -68,7 +68,7 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ViewHold
                 if (kq>0){
                     Toast.makeText(context, "Thêm thành công vào giỏ hàng", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(context, "Có lỗi thì thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Có lỗi khi thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                 }
 //                if(dao.delete(sp.getMasp())){
 //                    Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();

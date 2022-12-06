@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class SQLite extends SQLiteOpenHelper {
-    public static final String NAME_DB = "DUANLTMT3";
+    public static final String NAME_DB = "DUANLTMT4";
     public static final int VERSION_DB = 1;
     public SQLite(@Nullable Context context) {
         super(context, NAME_DB, null, VERSION_DB);
@@ -41,6 +41,13 @@ public class SQLite extends SQLiteOpenHelper {
                 "tensp text," +
                 "dongia int)";
         db.execSQL(lichsu);
+        String sanphambanchay = "CREATE TABLE SanPhamBanChay(" +
+                "tensp text PRIMARY KEY," +
+                "soLuong int)";
+        db.execSQL(sanphambanchay);
+        String insert_sanphambanchay = "INSERT INTO SanPhamBanChay VALUES ('Nem phùng',0), ('Nem nắm Giao Thủy',0)," +
+                "('Nem chua Thanh Hóa',0), ('Nem lụi Huế',0), ('Nem nướng Ninh Hòa',0)";
+        db.execSQL(insert_sanphambanchay);
     }
 
     @Override
@@ -49,6 +56,7 @@ public class SQLite extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Nguoimua");
         db.execSQL("DROP TABLE IF EXISTS Giohang");
         db.execSQL("DROP TABLE IF EXISTS Lichsu");
+        db.execSQL("DROP TABLE IF EXISTS SanPhamBanChay");
         onCreate(db);
     }
 }

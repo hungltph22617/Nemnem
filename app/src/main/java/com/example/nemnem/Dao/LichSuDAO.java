@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.nemnem.Database.SQLite;
+import com.example.nemnem.model.GioHang;
 import com.example.nemnem.model.Lichsu;
+import com.example.nemnem.model.SanPhamBanChay;
 
 import java.util.ArrayList;
 
@@ -53,4 +55,19 @@ public class LichSuDAO {
         return listLop;
     }
 
+//    public ArrayList<SanPhamBanChay> selectSpBanChay(){
+//        String sql = "SELECT tensp, COUNT(tensp) as soLuong FROM Lichsu group by tensp";
+//        ArrayList<SanPhamBanChay> list = new ArrayList<>();
+//        Cursor cs = db.rawQuery(sql,new String[]{});
+//        if (cs.moveToFirst()){
+//            while (!(cs.isAfterLast())){
+//                SanPhamBanChay sp = new SanPhamBanChay();
+//                sp.setTensp(cs.getString(0));
+//                sp.setSoLuongBan(cs.getInt(1));
+//                list.add(sp);
+//                cs.moveToNext();
+//            }
+//        }
+//        return list;
+//    }
 }
