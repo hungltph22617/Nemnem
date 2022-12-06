@@ -134,6 +134,22 @@ public class Tatca extends androidx.fragment.app.Fragment {
 //                    });
                     builder.show();
                 }
+
+//                Lichsu objLS = new Lichsu();
+//                objLS.setTensp(a);
+//                objLS.setDongia(b);
+//                lichSuDAO.insert(objLS);
+////                Intent sms = new Intent(Intent.ACTION_VIEW);
+////                sms.setData(Uri.parse("smsto:"));
+////                sms.setType("vnd.android-dir/mms-sms");
+////                sms.putExtra("address", new String("0123456789"));
+////                sms.putExtra("sms_body", a + b);
+////                startActivity(sms);
+////                SmsManager smsManager = SmsManager.getDefault();
+////                smsManager.sendTextMessage("012345678", null, a + b, null, null);
+//                gioHangDAO.deleteAll();
+//                list.clear();
+//                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
             }
         });
     }
