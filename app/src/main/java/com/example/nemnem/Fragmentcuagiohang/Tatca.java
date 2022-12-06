@@ -1,13 +1,21 @@
 package com.example.nemnem.Fragmentcuagiohang;
 
+import android.Manifest;
 import android.app.Fragment;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.telephony.SmsManager;
+import android.telephony.SmsMessage;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,6 +119,14 @@ public class Tatca extends androidx.fragment.app.Fragment {
                 objLS.setTensp(a);
                 objLS.setDongia(b);
                 lichSuDAO.insert(objLS);
+//                Intent sms = new Intent(Intent.ACTION_VIEW);
+//                sms.setData(Uri.parse("smsto:"));
+//                sms.setType("vnd.android-dir/mms-sms");
+//                sms.putExtra("address", new String("0123456789"));
+//                sms.putExtra("sms_body", a + b);
+//                startActivity(sms);
+//                SmsManager smsManager = SmsManager.getDefault();
+//                smsManager.sendTextMessage("012345678", null, a + b, null, null);
                 gioHangDAO.deleteAll();
                 list.clear();
                 Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
